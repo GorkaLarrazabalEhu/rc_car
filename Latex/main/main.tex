@@ -1,0 +1,69 @@
+\documentclass[a4paper,12pt]{article}
+
+% -------------------------
+% PAGE GEOMETRY (solo una vez)
+% -------------------------
+\usepackage[a4paper,top=2.5cm,bottom=2.5cm,left=2.5cm,right=2.5cm]{geometry}
+
+% -------------------------
+% COLORS + BOXES
+% -------------------------
+\usepackage[dvipsnames,table]{xcolor}
+
+% -------------------------
+% FONT AND LANGUAGE (XeLaTeX/LuaLaTeX)
+% -------------------------
+\usepackage{fontspec}
+\usepackage{polyglossia}
+\setmainlanguage{spanish}
+\usepackage{csquotes}
+
+% -------------------------
+% EHUSans
+% -------------------------
+\setmainfont{EHUSans}[
+  Path = EHUSans/,
+  Extension = .otf,
+  UprightFont = EHUSans-Light,
+  BoldFont = EHUSans-Bold,
+  ItalicFont = EHUSans-Italic,
+  BoldItalicFont = EHUSans-BoldItalic
+]
+
+% -------------------------
+% GRAPHICS + MATH
+% -------------------------
+\usepackage{graphicx}
+\usepackage{amsmath}
+
+% -------------------------
+% BIBLATEX
+% -------------------------
+\usepackage[
+  backend=biber,
+  style=phys,
+  language=auto,
+  articletitle=true,
+  biblabel=brackets,
+  chaptertitle=false,
+  pageranges=false
+]{biblatex}
+\addbibresource{../bib/bibliografia.bib}
+
+
+\title{TFG}
+
+\begin{document}
+
+\include{Secciones/portada}
+
+\renewcommand{\contentsname}{Índice}
+\tableofcontents
+
+\include{Secciones/Intro}
+
+\include{Secciones/Teoria}
+
+\printbibliography[title={Bibliografía}]
+
+\end{document}
