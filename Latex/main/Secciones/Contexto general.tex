@@ -1,0 +1,130 @@
+\section{Contexto general}
+Todo coche teledirigido requiere una serie de componentes indispensables, y en este apartado,
+se analizarán cada uno de ellos, explicando su función e importancia en el sistema.
+Un juguete de estas características lo componen un  \textbf{sistema de comunicación y control},
+una \textbf{fuente de energía}, un \textbf{chasis} y un \textbf{sistema de propulsión y dirección}.
+
+\subsection{Comunicación y control}
+El sistema de comunicación y control es el encargado de recibir las órdenes del piloto a 
+través del mando a distancia y transmitirlas al coche. Este sistema utiliza
+tecnologías como radiofrecuencia, Bluetooth o Wi-Fi. Para generar las señales de control
+se emplean microcontroladores o microprocesadores, que interpretan las señales recibidas
+y las convierten en señales para controlar el motor, la dirección y otros componentes del 
+coche. Además, este sistema puede incluir sensores para proporcionar información en tiempo
+real sobre la velocidad, posición y situación del coche.
+
+Por lo tanto, se levanta la siguiente pregunta: ¿Qué tecnología de comunicación es la
+más adecuada para un coche teledirigido? ¿Cual se va a emplear en este proyecto?
+¿Qué tipo de microcontrolador o microprocesador se va a utilizar? Poco a poco se irán
+respondiendo a estas preguntas.
+
+\subsubsection{¿Qué es un microcontrolador?}
+Un microcontrolador es un dispositivo electrónico integrado que reúne en un único chip
+una unidad de procesamiento, memoria y diferentes periféricos de entrada y salida.
+Su función principal es ejecutar programas previamente almacenados, permitiendo así
+controlar y gestionar el funcionamiento de sistemas electrónicos de forma autónoma.
+En el contexto de un coche teledirigido, el microcontrolador es el cerebro del sistema.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.3\textwidth]{../imagenes/Microcontrollers_Atmega32_Atmega8.jpg}
+    \caption{Ejemplo de microcontrolador, en este caso, Atmega 32 y Atmega 8}
+    \label{fig:microcontroladoratmega}
+\end{figure}
+
+Existen diferentes tipos de microcontroladores, cada uno con sus propias características y capacidades:
+
+\paragraph{Arduino.}
+Es una plataforma de prototipado electrónico de código 
+abierto que utiliza microcontroladores Atmel AVR. Es muy popular 
+debido a su facilidad de uso y amplia comunidad de soporte. Se programa
+en el lenguaje de programación de Arduino, que es una variante de C/C++ en el
+entorno de desarrollo propio de Arduino. Es una buena opción ya que se pueden
+añadir módulos de comuncación inalámbrica y el consumo energético es muy
+bajo, y es el de menor capacidad de procesamiento de los tres, pero suficiente para 
+este proyecto.
+
+
+\paragraph{ESP32.}
+Es un microcontrolador de bajo coste, similar a Arduino, con capacidades de Wi-Fi y 
+Bluetooth integradas, lo que lo hace una buen candidato para proyectos y aplicaciones 
+que requieren conectividad inalámbrica. El ESP32 es más potente que el Arduino, con 
+un procesador de doble núcleo y una mayor cantidad de memoria, lo que permite 
+ejecutar tareas más complejas y manejar múltiples sensores y actuadores simultáneamente. 
+Se programa utilizando el entorno de desarrollo de Arduino o mediante otros entornos 
+compatibles como PlatformIO.
+
+\paragraph{Raspberry Pi:}
+Existen dos variantes de Raspberry Pi, la variante microcontrolador (familia Pico)
+y la variante microordenador (familia Raspberry Pi). La variante microcontrolador es similar a Arduino,
+y se puede programar con microPython o C/C++. Por otro lado, la variante microordenador corre todo un 
+sistema operativo Linux por debajo, lo que le permite ejecutar tareas muy complejas como
+computación de visión artificial y procesamiento de datos en tiempo real. Es el más potente de todos
+pero tambien el más caro y con demasiado consumo energético para este proyecto.
+
+
+\begin{figure}[H]
+    \centering
+    
+    \begin{subfigure}{0.24\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{../imagenes/arduino_nano.jpg}
+        \caption{Arduino Nano}
+    \end{subfigure}
+    \begin{subfigure}{0.24\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{../imagenes/ESP32_wroom.jpg}
+        \caption{ESP32}
+    \end{subfigure}
+    \begin{subfigure}{0.24\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{../imagenes/Raspberry_Pi_Pico.jpg}
+        \caption{Raspberry Pi Pico}
+    \end{subfigure}
+    \begin{subfigure}{0.22\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{../imagenes/Raspberry_Pi_4_Model_B.jpg}
+        \caption{Raspberry Pi 4B}
+    \end{subfigure}
+
+
+    \caption{Comparación de microcontroladores}
+    \label{fig:comparacion}
+\end{figure}
+
+
+\subsection{Fuente de energía}
+Para alimentar un coche teledirigido, se pueden utilizar diferentes tipos de fuentes de
+energía, pilas alcalinas, baterías de ion de litio (Li-ion), baterías de polímero de litio (Li-Po)
+o baterías de níquel-metal hidruro (NiMH), cada una con sus ventajas y desventajas.
+
+La elección de la fuente de alimentación dependerá de la autonomía deseada, el peso del coche, 
+el coste, la facilidad de recarga y la potencia capaz de proporcionar. Las baterías de ion de litio
+y polímero de litio son las más comunes en coches teledirigidos debido a su alta densidad energética,
+bajo peso y capacidad de recarga rápida. Sin embargo, también son más costosas que las pilas alcalinas
+o las baterías de níquel-metal hidruro.
+
+
+\subsection{Chasis}
+El chasis es la estructura que sostiene todos los componentes del coche teledirigido. Puede estar
+fabricado con materiales como el plástico, metal, PLA, madera, etc. La estructura debe ser lo
+suficientemente resistente como para soportar el peso de los componentes y las fuerzas de aceleración
+frenado giros y golpes pero lo suficienteme ligero para no afectar negativamente a la autonomía y 
+rendimiento del coche. La distribución del peso de los componentes debe ser equilibrada para que 
+el manejo sea óptimo y por último, la estética tambien es importante en un juguete, por lo que debe ser 
+atractivo. Por conveniencia y flexibilidad, se optará por un chasis impreso en 3D con PLA, ya que es
+un material ligero, resistente y fácil de trabajar, además de permitir diseños personalizados.
+
+
+\subsection{Propulsión y dirección}
+Un coche teledirigido que no se mueve no es un coche teledirigido, ni es nada,
+por lo tanto, se necesita un sistema que haga avanzar el coche que estará formado por
+un motor de tracción DC, un motor de dirección, un sistema de transmisión y unas ruedas.
+
+\subsubsection{Propulsión:Motor DC}
+\subsubsection{Motor de dirección: Servomotor}
+\subsubsection{Ruedas}
+
+
+
+\cite{Bohren}\cite{Mishchenko}\cite{Bohren,Mishchenko} (prueba, funcionan las citas)
