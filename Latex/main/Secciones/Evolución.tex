@@ -1,0 +1,33 @@
+\section{Evolución del diseño}
+
+El desarrollo del coche teledirigido no fue lineal, 
+sino que evolucionó a lo largo de distintas etapas a 
+medida que se evaluaban distintas soluciones.
+
+
+\subsection{Primera aproximación: Arduino y comunicación por radiofrecuencia}
+
+En una primera fase, se optó por utilizar una placa Arduino 
+junto con el módulo de comunicación NRF24L01, con el objetivo de 
+implementar un sistema de control remoto basado en radiofrecuencia. 
+Esta solución permitía una comunicación directa entre el mando y 
+el vehículo, con bajo consumo y relativa simplicidad.
+
+Sin embargo, esta aproximación no cumplía con el objetivo de que 
+fuera manejable con el teléfono móvil y requería un Arduino
+adicional, además de piezas adicionales como botones, un 
+joystick, baterías y el módulo de radiofrecuencia.
+
+\subsection{Transición a ESP32 y servidor web}
+
+Debido a las limitaciones encontradas, se decidió pasar a una 
+solución basada en el microcontrolador ESP32, que integra conectividad 
+WiFi. Esto permitió implementar un servidor web embebido en el 
+propio vehículo, posibilitando el control del coche a través de una 
+interfaz accesible desde cualquier dispositivo con navegador.
+
+\subsection{Diseño final}
+
+Finalmente, el sistema se consolidó en torno al ESP32 como núcleo de 
+control, integrando la gestión de motores, dirección mediante servomotor 
+y comunicación inalámbrica a través de WiFi.

@@ -119,12 +119,72 @@ un material ligero, resistente y fácil de trabajar, además de permitir diseño
 \subsection{Propulsión y dirección}
 Un coche teledirigido que no se mueve no es un coche teledirigido, ni es nada,
 por lo tanto, se necesita un sistema que haga avanzar el coche que estará formado por
-un motor de tracción DC, un motor de dirección, un sistema de transmisión y unas ruedas.
+un motor de tracción, un motor de dirección, un sistema de transmisión y unas ruedas.
+Cuando la señal inalámbrica llega al microcontrolador, este interpreta la orden
+y envía la respuesta correspondiente a los motores.
 
-\subsubsection{Propulsión:Motor DC}
+\subsubsection{Propulsión: Motor DC}
+Un motor de corriente continua (DC) es un tipo de motor eléctrico que conviete la energía
+eléctrica en energía mecánica mediante la interacción de campos magnéticos. 
+Los motores eléctricos están formados principalmente por dos partes: el estator y el rotor.
+El estator es la parte fija del motor, que genera el campo magnético; puede estar formado
+por imanes permanentes o electroimanes. El rotor es la parte móvil, que gira debido a la
+interacción con el campo magnético del estator.
+
+(Debería explicar el funcionamiento de cada uno)
+
+
+
+Los motores con escobillas son más simples y económicos, pero se desgastan con el tiempo...
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}{0.25\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{../imagenes/Motor_internals.JPG}
+        \caption{Motor DC con escobillas}
+    \end{subfigure}
+    \hspace{0.05\textwidth}
+    \begin{subfigure}{0.25\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{../imagenes/Motor_internals sin escobillas.JPG}
+        \caption{Motor DC sin escobillas}
+        \label{fig:motor_internals}
+    \end{subfigure}
+\end{figure}
+
+los motores sin escobillas...
+
 \subsubsection{Motor de dirección: Servomotor}
+La dirección de un coche teledirigido se puede controlar acoplando un motor
+DC a cada rueda y accionando cada uno de manera independiente. Sin embargo, una solución
+más eficiente y precisa consiste en utilizar un servomotor, que, acoplado al varillaje de la dirección,
+controla la orientación de las ruedas delanteras.
+
+Un servomotor es un dispositivo que permite controlar con precisión la posición angular
+de su eje. Internamente, está formado por un motor DC, un sistema de engranajes
+reductores, un sensor de posición (generalmente un potenciómetro) y un circuito de control.
+
+El servomotor recibe una señal de control, normalmente de tipo PWM
+(modulación por ancho de pulso), que determina la posición deseada. 
+El circuito interno compara esta referencia con la posición actual y ajusta 
+el movimiento del motor hasta alcanzar el ángulo indicado.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.4\textwidth]{../imagenes/servomotor.jpg}
+    \caption{Componentes internos de un servomotor}
+    \label{fig:servomotor_internals}
+\end{figure}
+
+
+
 \subsubsection{Ruedas}
+Las ruedas son el punto de contacto entre el coche teledirigido y el suelo,
+por lo que su material es crucial para el rendimiento del vehículo.
+Las ruedas pueden estar hechas de plástico, goma o una combinación de ambos.
 
 
 
-\cite{Bohren}\cite{Mishchenko}\cite{Bohren,Mishchenko} (prueba, funcionan las citas)
+
+
+
